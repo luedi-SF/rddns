@@ -53,6 +53,8 @@ async def ipnew(item: aItem):
             "content": item.ip,
             "proxied": resp["proxied"]
         })
+        print("Detail:",resp)
+        print("Result:", res)
         if (not res or not resp):
             return {"code": 0}
 
