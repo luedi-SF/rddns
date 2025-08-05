@@ -10,6 +10,7 @@ app = FastAPI()
 
 with open('production.json') as f:
     Config = json.load(f)
+    print("readConfig:",Config)
 
 class aItem(BaseModel):
     ip: str
@@ -58,11 +59,3 @@ async def ipnew(item: aItem):
 
 
     return {"code": 1}
-
-
-if __name__ == "__main__":
-    item=aItem(
-        ip="123.123.123.123",
-        token="4a9bc7e5f161184fd92ca833533a0580"
-    )
-    print(ipnew(item))
