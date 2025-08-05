@@ -46,6 +46,9 @@ async def ipnew(item: aItem):
     print("New IP change:",item.ip)
     for i in Config["domains"]:
         resp=getCFDnsDetails(i["domain"],Config["zone_id"],Config["email"],Config["api_key"])
+        if resp["content"] == item.ip:
+            print("IP not change:",i["domain"])
+            continue
         res=changeIP(Config["zone_id"],resp['id'],Config["email"],Config["api_key"],{
             "type": resp["type"],
             "name": resp["name"],
