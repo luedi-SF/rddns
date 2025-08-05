@@ -1,5 +1,4 @@
 # Author: luedi
-# Version: 0.1
 
 import json
 from fastapi import FastAPI
