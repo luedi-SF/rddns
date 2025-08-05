@@ -4,7 +4,7 @@ LABEL maintainer="luedi <wallisluedi@gmail.com>"
 WORKDIR /rddns
 COPY ./ /rddns/
 
-RUN pip install --no-cache-dir --target=/install -r requirements.txt && \
+RUN pip install --no-cache-dir -r requirements.txt && \
     rm -rf /root/.cache/pip
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
